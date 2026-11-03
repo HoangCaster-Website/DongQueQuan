@@ -250,7 +250,7 @@ const menuGroups = [
       [
         "V11",
         "Bun thit nuong chay",
-        "Reisnudeln mit gegrilltem Soja-Fleisch-Medaillons, Tofu mit einer würzigen Fischsoße oder Sojasoße und verschiedenen Kräutern, Erdnuss, Röstzwiebeln",
+        "Reisnudeln mit gegrillten Soja-Fleisch-Medaillons, einer würzigen Fischsoße oder Sojasoße und verschiedenen Kräutern, Erdnuss, Röstzwiebeln",
         "12,90 €",
         "",
       ],
@@ -1070,7 +1070,7 @@ document
   );
 renderMenu();
 
-const WHATSAPP_NUMBER = "498920569403";
+const WHATSAPP_NUMBER = "491725907269";
 const CART_STORAGE_KEY = "dong-que-quan-cart-v1";
 const inventory = new Map();
 menuGroups.forEach((group) =>

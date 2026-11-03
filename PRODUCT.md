@@ -26,7 +26,7 @@ An authentic Vietnamese menu with clearly preserved Vietnamese dish names, broad
 ## Operating Context
 
 - German-language public restaurant website.
-- Most urgent actions are viewing the menu, ordering for pickup or reserving through WhatsApp at +49 89 20569403, checking hours, calling, and opening Google Maps.
+- Most urgent actions are viewing the menu, ordering for pickup or reserving through WhatsApp at +49 172 5907269, checking hours, calling, and opening Google Maps.
 - Menu photographs in the project root are the source of truth for dish numbers, names, descriptions, allergen codes, quantities, and prices.
 
 ## Capabilities and Constraints
@@ -35,7 +35,7 @@ An authentic Vietnamese menu with clearly preserved Vietnamese dish names, broad
 - Complete menu rendered as searchable/filterable HTML, never as embedded menu photographs.
 - Mobile category navigation scrolls horizontally and remains usable while browsing a long menu.
 - Every menu item can be added to a persistent browser cart with quantity controls and a calculated subtotal.
-- Pickup orders and table reservations create structured WhatsApp requests to +49 89 20569403. The restaurant must confirm each request; no confirmation or payment backend is simulated.
+- Pickup orders and table reservations create structured WhatsApp requests to +49 172 5907269. The restaurant must confirm each request; no confirmation or payment backend is simulated.
 - Phone and route CTAs remain available as direct links.
 - Performance-conscious image loading, semantic HTML, keyboard support, reduced-motion support, SEO metadata, OpenGraph, canonical URL, and Restaurant JSON-LD.
 - The exact production canonical URL and HoangCaster URL were not supplied and remain open decisions.

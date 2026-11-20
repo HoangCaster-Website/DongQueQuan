@@ -159,7 +159,8 @@ a {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -1718,6 +1719,7 @@ address {
 }
 
 .form-field input,
+.form-field select,
 .form-field textarea {
   width: 100%;
   min-height: 48px;
@@ -1744,13 +1746,15 @@ address {
 }
 
 .form-field input:focus,
+.form-field select:focus,
 .form-field textarea:focus {
   border-color: var(--gold-hover);
   box-shadow: 0 0 0 3px rgba(128, 91, 36, 0.16);
   outline: none;
 }
 
-.form-field input[aria-invalid="true"] {
+.form-field input[aria-invalid="true"],
+.form-field select[aria-invalid="true"] {
   border-color: var(--crimson);
   box-shadow: 0 0 0 3px var(--crimson-light);
 }

@@ -904,6 +904,7 @@ body.menu-open .site-header .brand-copy small { color: var(--crimson); }
 }
 .form-field label { color: var(--text-primary); }
 .form-field input,
+.form-field select,
 .form-field textarea {
   border-radius: 8px;
   color: var(--text-primary);

@@ -1353,29 +1353,20 @@ const reservationDate = document.querySelector("#reservation-date");
 const now = new Date();
 reservationDate.min = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 
-function isWithinOpeningHours(time) {
-  if (!time) return false;
-  const [hours, minutes] = time.split(":").map(Number);
-  const value = hours * 60 + minutes;
-  return (value >= 660 && value <= 900) || (value >= 1020 && value <= 1320);
-}
-
 reservationForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const nameInput = document.querySelector("#reservation-name");
   const guestsInput = document.querySelector("#reservation-guests");
   const dateInput = document.querySelector("#reservation-date");
-  const timeInput = document.querySelector("#reservation-time");
+  const timeSelect = document.querySelector("#reservation-time");
   const phoneInput = document.querySelector("#reservation-phone");
   const noteInput = document.querySelector("#reservation-note");
-  const status = document.querySelector("#reservation-status");
   const name = nameInput.value.trim();
   const guests = Number(guestsInput.value);
   const date = dateInput.value;
-  const time = timeInput.value;
+  const time = timeSelect.value;
 
   const dateIsValid = date && date >= reservationDate.min;
-  const timeIsValid = isWithinOpeningHours(time);
   setFieldError(nameInput, name ? "" : "Bitte geben Sie Ihren Namen ein.");
   setFieldError(
     guestsInput,
@@ -1385,14 +1376,8 @@ reservationForm.addEventListener("submit", (event) => {
     dateInput,
     dateIsValid ? "" : "Bitte wählen Sie ein gültiges Datum.",
   );
-  setFieldError(
-    timeInput,
-    timeIsValid
-      ? ""
-      : "Bitte wählen Sie 11:00-15:00 oder 17:00-22:00 Uhr.",
-  );
-  status.textContent = "";
-  if (!name || guests < 1 || guests > 30 || !dateIsValid || !timeIsValid) {
+  setFieldError(timeSelect, time ? "" : "Bitte wählen Sie eine Uhrzeit.");
+  if (!name || guests < 1 || guests > 30 || !dateIsValid || !time) {
     const firstInvalid = reservationForm.querySelector('[aria-invalid="true"]');
     firstInvalid?.focus();
     return;
@@ -1421,7 +1406,7 @@ reservationForm.addEventListener("submit", (event) => {
 });
 
 document
-  .querySelectorAll("#order-form input, #reservation-form input")
+  .querySelectorAll("#order-form input, #reservation-form input, #reservation-time")
   .forEach((input) =>
     input.addEventListener("input", () => setFieldError(input, "")),
   );

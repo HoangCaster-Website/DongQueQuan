@@ -54,8 +54,8 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/redesign.css?v=17" />
+    <link rel="stylesheet" href="css/style.css?v=2" />
+    <link rel="stylesheet" href="css/redesign.css?v=18" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -754,8 +754,43 @@
           </div>
           <div class="form-field">
             <label for="reservation-time">Uhrzeit</label>
-            <input id="reservation-time" name="time" type="time" required />
-            <span class="field-error" data-error-for="reservation-time"></span>
+            <select
+              id="reservation-time"
+              name="time"
+              required
+              aria-describedby="reservation-time-error"
+            >
+              <option value="" selected disabled>Uhrzeit wählen</option>
+              <optgroup label="Mittags · 11:00–15:00 Uhr">
+                <option>11:00</option>
+                <option>11:30</option>
+                <option>12:00</option>
+                <option>12:30</option>
+                <option>13:00</option>
+                <option>13:30</option>
+                <option>14:00</option>
+                <option>14:30</option>
+                <option>15:00</option>
+              </optgroup>
+              <optgroup label="Abends · 17:00–22:00 Uhr">
+                <option>17:00</option>
+                <option>17:30</option>
+                <option>18:00</option>
+                <option>18:30</option>
+                <option>19:00</option>
+                <option>19:30</option>
+                <option>20:00</option>
+                <option>20:30</option>
+                <option>21:00</option>
+                <option>21:30</option>
+                <option>22:00</option>
+              </optgroup>
+            </select>
+            <span
+              class="field-error"
+              id="reservation-time-error"
+              data-error-for="reservation-time"
+            ></span>
           </div>
           <div class="form-field">
             <label for="reservation-phone">Telefon (optional)</label>
@@ -776,9 +811,15 @@
               placeholder="Kinderstuhl, Allergien oder weitere Hinweise"
             ></textarea>
           </div>
-          <p class="form-status" id="reservation-status" aria-live="polite"></p>
-          <button class="button form-submit form-field-wide" type="submit">
-            Reservierung über WhatsApp senden
+          <p class="form-field-wide" id="reservation-whatsapp-hint">
+            Tippen Sie in WhatsApp auf „Senden“, um Ihre Anfrage abzuschicken.
+          </p>
+          <button
+            class="button form-submit form-field-wide"
+            type="submit"
+            aria-describedby="reservation-whatsapp-hint"
+          >
+            Weiter zu WhatsApp
           </button>
         </form>
       </section>
@@ -929,6 +970,6 @@
         anzuzeigen. Telefon: +49 89 20569403.
       </p></noscript
     >
-    <script src="js/main.js?v=4" defer></script>
+    <script src="js/main.js?v=5" defer></script>
   </body>
 </html>
